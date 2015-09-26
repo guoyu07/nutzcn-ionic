@@ -51,8 +51,8 @@ module.exports = function (grunt) {
             name: 'development',
             debug: true,
             // Test user access token
-            accessToken: 'f6d0dc46-d66f-45f9-a7e7-4c1be175a08d',
-            api: 'http://dev.cnodejs.org/api/v1'
+            accessToken: '7b3rkeofkaj59r087dfggvua4t',
+            api: 'http://192.168.88.108:8080/nutzbook/yvr/api/v1'
           }
         }
       },
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
             version: '<%= pkg.version %>',
             name: 'production',
             debug: false,
-            api: 'https://cnodejs.org/api/v1'
+            api: 'https://nutz.cn/yvr/api/v1'
           }
         }
       }

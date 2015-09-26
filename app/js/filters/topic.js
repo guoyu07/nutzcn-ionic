@@ -38,7 +38,7 @@ angular.module('cnodejs.filters')
   return function(src) {
     // filter avatar link
     if (/^\/agent\?/gi.test(src)) {
-      return 'https://cnodejs.org' + src;
+      return 'https://nutz.cn' + src;
     }
     // add https protocol
     if (/^\/\//gi.test(src)) {

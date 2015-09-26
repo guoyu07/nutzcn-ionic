@@ -34,10 +34,18 @@ angular.module('cnodejs.services')
       push = window.plugins && window.plugins.jPushPlugin;
       if (push) {
         $log.debug('jpush: init');
-        plugins.jPushPlugin.init();
-        plugins.jPushPlugin.setDebugMode(ENV.debug);
-        plugins.jPushPlugin.openNotificationInAndroidCallback = notificationCallback;
-        plugins.jPushPlugin.receiveNotificationIniOSCallback = notificationCallback;
+	document.addEventListener("deviceready",function(){
+		$log.debug('jpush: init FUCK');
+		plugins.jPushPlugin.init();
+        	plugins.jPushPlugin.setDebugMode(ENV.debug);
+        	plugins.jPushPlugin.openNotificationInAndroidCallback = notificationCallback;
+        	plugins.jPushPlugin.receiveNotificationIniOSCallback = notificationCallback;
+	},false);
+
+        //plugins.jPushPlugin.init();
+        //plugins.jPushPlugin.setDebugMode(ENV.debug);
+        //plugins.jPushPlugin.openNotificationInAndroidCallback = notificationCallback;
+        //plugins.jPushPlugin.receiveNotificationIniOSCallback = notificationCallback;
       }
     }
   };

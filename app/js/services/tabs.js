@@ -12,24 +12,28 @@ angular.module('cnodejs.services')
 .factory('Tabs', function() {
   return [
     {
-      value: 'all',
-      label: '最新'
+      value: 'ask',
+      label: '问答'
     },
     {
       value: 'share',
       label: '分享'
     },
     {
-      value: 'ask',
-      label: '问答'
+      value: 'news',
+      label: '新闻'
     },
     {
       value: 'job',
       label: '招聘'
     },
     {
-      value: undefined,
+      value: "nb",
       label: '其他'
+    },
+    {
+      value: 'shortit',
+      label: '短点'
     }
   ];
 });

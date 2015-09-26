@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.lanceli.cnodejs"
-  version="1.2.2"
+<widget id="net.wendal.nutzbook"
+  version="1.2.3"
   android-versionCode="117"
   ios-CFBundleVersion="117"
   xmlns="http://www.w3.org/ns/widgets"
@@ -10,12 +10,12 @@
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <name display="CNode社区">CNodeJs</name>
+    <name display="Nutz社区">CNodeJs</name>
     <description>
-      Ionic app for https://cnodejs.org
+      Ionic app for https://nutz.net
     </description>
-    <author email="lyfuture@gmail.com" href="http://github.com/lanceli">
-      Lance Li
+    <author email="wendal1985@gmail.com" href="http://github.com/wendal">
+      Lance Li, Wendal Chen
     </author>
     <content src="index.html" />
     <access origin="*" />

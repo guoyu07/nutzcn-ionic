@@ -145,7 +145,7 @@ angular.module('cnodejs.controllers')
     }
     if(window.cordova && window.cordova.plugins.barcodeScanner) {
       var loginPrompt = $ionicPopup.show({
-        template: 'PC端登录cnodejs.org后，扫描设置页面的Access Token二维码即可完成登录',
+        template: 'PC端登录nutz.cn后，扫描设置页面的Access Token二维码即可完成登录',
         title: '扫码登录',
         scope: $scope,
         buttons: [
@@ -171,7 +171,7 @@ angular.module('cnodejs.controllers')
         var loginPopup = $ionicPopup.show({
           template: '<input type="text" ng-model="data.token">',
           title: '输入Access Token',
-          subTitle: 'PC端登录cnodejs.org后，在设置页可以找到Access Token',
+          subTitle: 'PC端登录nutz.cn后，在设置页可以找到Access Token',
           scope: $scope,
           buttons: [
             { text: '取消' },
