@@ -24,16 +24,16 @@ angular.module('cnodejs.services')
       label: '新闻'
     },
     {
-      value: 'job',
-      label: '招聘'
-    },
-    {
       value: "nb",
-      label: '其他'
+      label: '灌水'
     },
     {
       value: 'shortit',
       label: '短点'
+    },
+    {
+      value: 'job',
+      label: '招聘'
     }
   ];
 });
