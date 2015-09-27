@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="net.wendal.nutzbook"
-  version="1.2.3"
+  version="2.0.0"
   android-versionCode="117"
   ios-CFBundleVersion="117"
   xmlns="http://www.w3.org/ns/widgets"
@@ -10,9 +10,9 @@
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <name display="Nutz社区">CNodeJs</name>
+    <name display="Nutz社区">NutzCN</name>
     <description>
-      Ionic app for https://nutz.net
+      Ionic app for https://nutz.cn
     </description>
     <author email="wendal1985@gmail.com" href="http://github.com/wendal">
       Lance Li, Wendal Chen

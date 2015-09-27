@@ -30,7 +30,7 @@ angular.module('cnodejs.services')
           user.accesstoken = accesstoken;
 
           // set alias for jpush
-          Push.setAlias(user.id);
+          Push.setAlias("u_"+user.id);
 
           Storage.set(storageKey, user);
         });

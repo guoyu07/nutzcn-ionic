@@ -36,8 +36,11 @@ angular.module('cnodejs.services')
         $log.debug('jpush: init');
         plugins.jPushPlugin.init();
         plugins.jPushPlugin.setDebugMode(ENV.debug);
-        plugins.jPushPlugin.openNotificationInAndroidCallback = notificationCallback;
-        plugins.jPushPlugin.receiveNotificationIniOSCallback = notificationCallback;
+	document.addEventListener("jpush.openNotification", notificationCallback, false);
+	//document.addEventListener("jpush.receiveNotification", notificationCallback, false);
+	//document.addEventListener("jpush.receiveMessage",  notificationCallback, false);
+        //plugins.jPushPlugin.openNotificationInAndroidCallback = notificationCallback;
+        //plugins.jPushPlugin.receiveNotificationIniOSCallback = notificationCallback;
       }
     }
   };

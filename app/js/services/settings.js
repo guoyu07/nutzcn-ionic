@@ -13,7 +13,8 @@ angular.module('cnodejs.services')
   var storageKey = 'settings';
   var settings = Storage.get(storageKey) || {
     sendFrom: false,
-    saverMode: true
+    saverMode: true,
+    notify : false
   };
   return {
     getSettings: function() {
@@ -22,6 +23,13 @@ angular.module('cnodejs.services')
     },
     save: function() {
       Storage.set(storageKey, settings);
+      if (device.platform == "Android" && window.plugins.jPushPlugin) {
+        if (settings.notify) {
+          window.plugins.jPushPlugin.resumePush();
+        } else {
+          window.plugins.jPushPlugin.stopPush();
+        }
+      }
     }
   };
 });

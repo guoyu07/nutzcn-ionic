@@ -26,30 +26,26 @@ angular.module('cnodejs', [
 
   // push notification callback
   var notificationCallback = function(data, isActive) {
-    $log.debug(data);
-    var notif = angular.fromJson(data);
-    if (notif.extras) {
-      // android
-      if (notif.extras['cn.jpush.android.EXTRA']['topicId']) {
-        $state.go('app.topic', {
-          id: notif.extras['cn.jpush.android.EXTRA']['topicId']
-        });
-      } else {
-        $state.go('app.messages');
-      }
+    var alertContent;
+    if(device.platform == "Android"){
+      alertContent   = window.plugins.jPushPlugin.openNotification;
+    } else{
+      alertContent   = event.aps;
+    }
+    //alert("open Notificaiton:"+alertContent);
+    var notif = alertContent;
+    console.log(notif);
+    console.log(notif.extras);
+    console.log(notif.extras['cn.jpush.android.EXTRA']);
+    console.log(notif.extras['cn.jpush.android.EXTRA']._topic_id);
+    console.log(JSON.stringify(notif));
+    if (notif && notif.extras && notif.extras['cn.jpush.android.EXTRA'] && notif.extras['cn.jpush.android.EXTRA'].topic_id) {
+      console.log("dump topic");
+      $state.go('app.topic', {
+        id: notif.extras['cn.jpush.android.EXTRA'].topic_id
+      });
     } else {
-      // ios
-      if (notif.topicId) {
-        if (isActive) {
-          $rootScope.getMessageCount();
-        } else {
-          $state.go('app.topic', {
-            id: notif.topicId
-          });
-        }
-      } else {
-        $state.go('app.messages');
-      }
+      $state.go('app.messages');
     }
   };
   $ionicPlatform.ready(function() {
@@ -57,7 +53,7 @@ angular.module('cnodejs', [
 
       // setup google analytics
       if (window.analytics && ENV.name === 'production') {
-        window.analytics.startTrackerWithId('UA-57246029-1');
+        //window.analytics.startTrackerWithId('UA-57246029-1');
       }
 
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -74,7 +70,7 @@ angular.module('cnodejs', [
     // detect current user have not set alias of jpush
     var currentUser = User.getCurrentUser();
     if (currentUser.id) {
-      Push.setAlias(currentUser.id);
+      Push.setAlias( "u_"+currentUser.id);
     }
 
     if (navigator.splashscreen) {
