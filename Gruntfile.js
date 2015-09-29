@@ -5,6 +5,10 @@ var _ = require('lodash');
 var path = require('path');
 var cordovaCli = require('cordova');
 var spawn = require('child_process').spawn;
+var os = require('os')
+if (os.platform() == "win32") {
+	spawn = require('win-spawn');
+}
 var exec = require('child_process').exec;
 
 module.exports = function (grunt) {
@@ -52,7 +56,7 @@ module.exports = function (grunt) {
             debug: true,
             // Test user access token
             accessToken: '7b3rkeofkaj59r087dfggvua4t',
-            api: 'http://192.168.88.108:8080/nutzbook/yvr/api/v1'
+            api: 'http://192.168.88.100:8080/nutzbook/yvr/api/v1'
           }
         }
       },
